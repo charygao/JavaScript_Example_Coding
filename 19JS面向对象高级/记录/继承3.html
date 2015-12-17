@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function A()
+{
+	this.abc=12;
+}
+
+A.prototype.show=function ()
+{
+	alert(this.abc);
+};
+
+//继承A
+
+function B()
+{
+	//this->new B()
+	A.call(this);
+}
+
+//B.prototype=A.prototype;
+for(var i in A.prototype)
+{
+	B.prototype[i]=A.prototype[i];
+}
+
+B.prototype.fn=function ()
+{
+	alert('abhhc');
+};
+
+var objB=new B();
+var objA=new A();
+
+objB.fn();
+objA.fn();//报错
+</script>
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oBtn=document.getElementById('btn1');
+	
+	oBtn.onclick=function ()
+	{
+		alert('a');
+	};
+	
+	oBtn.setCapture(); //只支持IE，将鼠标事件捕获到当前文档的指定的对象使得这个对象会为当前应用程序或整个系统接收所有鼠标事件。不过setCapture不支持键盘事件, 只能捕获以下鼠标事件：onmousedown、onmouseup、onmousemove、onclick、ondblclick、onmouseover和onmouseout。
+};
+</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="按钮" />
+</body>
+</html>
